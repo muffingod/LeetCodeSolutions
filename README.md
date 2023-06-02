@@ -2,5 +2,7 @@
 
 These are my solutions for the problems in [Leetcode](https://leetcode.com/).
 
-## Solutions:
+## Solutions
+
 - [x] [1. Two Sum](./1.%20Two%20Sum/)
+- [ ] [2. Add Two Numbers](./2.%20Add%20Two%20Numbers/)
