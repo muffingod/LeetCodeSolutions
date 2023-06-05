@@ -13,28 +13,23 @@ class ListNode:
 
 class Solution:
   def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-    sum = 0
-    if(l1):
-      sum += l1.val
-    if l2:
-      sum += l2.val
+    result = ListNode(0)
+    current = result
+    carry = 0
 
-    if sum >= 10:
-      sum %= 10
-      if l1 and l1.next:
-        l1.next.val += 1
-      elif l2 and l2.next:
-        l2.next.val += 1
-      else:
-        if not l1:
-          l1 = ListNode(0, ListNode(1))
-        else:
-          l1.next = ListNode(1)
+    while l1 or l2 or carry:
+      x = l1.val if l1 else 0
+      y = l2.val if l2 else 0
 
-    if((l1 and l1.next) or (l2 and l2.next)):
-        return ListNode(sum, self.addTwoNumbers(l1.next if l1 else None, l2.next if l2 else None))
-    else:
-      return ListNode(sum, None)
+      carry, out = divmod(x+y+carry, 10)
+
+      current.next = ListNode(out)
+      current = current.next
+
+      l1 = l1.next if l1 else None
+      l2 = l2.next if l2 else None
+
+    return result.next
 
 def lNL(list: List[int]):
   prevListNode = None
