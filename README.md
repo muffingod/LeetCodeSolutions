@@ -1,6 +1,6 @@
 # LeetCodeSolutions
 
-These are my solutions for the problems in [Leetcode](https://leetcode.com/).
+These are my solutions for the problems in [Leetcode](https://leetcode.com/). The solutions are written in Python3.
 
 ## Solutions
 
